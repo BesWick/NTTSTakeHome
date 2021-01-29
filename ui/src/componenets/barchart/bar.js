@@ -1,52 +1,38 @@
-import { HorizontalBar, defaults } from 'react-chartjs-2'
+import { HorizontalBar } from 'react-chartjs-2'
 
 import './bar.css'
-
-function getRandomColor(n) {
-    const res = []
-    for (let i = 0; i < n; i++) {
-        var letters = '0123456789ABCDEF'.split('')
-        var color = '#'
-        for (let j = 0; j < 6; j++) {
-            color += letters[Math.floor(Math.random() * 16)]
-        }
-        res.push(color)
-    }
-    return res
-}
-defaults.global.defaultColor = '#22cd59'
-defaults.global.defaultFontColor = '#22cd59'
-defaults.global.defaultFontFamily = 'Retro'
-// defaults.global.defaultFontSize = '12'
-
 function BarChart({ data }) {
-    console.log(data)
-    const color = getRandomColor(18)
-    const test = {
+    // console.log(data)
+    const chartData = {
         labels: Object.keys(data),
         datasets: [
             {
                 label: '# of Patents',
                 borderColor: '#22cd59',
-                backgroundColor: 'black',
+                backgroundColor: '#137633',
                 borderWidth: 1,
-                hoverBackgroundColor: '#137633',
-                hoverBorderColor: '22cd59',
+                hoverBackgroundColor: '#22cd59',
+                hoverBorderColor: '#22cd59',
                 data: Object.values(data),
             },
         ],
     }
     return (
         <div className='barchart'>
-            <p>Hello</p>
             <HorizontalBar
-                data={test}
+                data={chartData}
                 options={{
                     maintainAspectRatio: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Patents per Portfolio Category',
+                        fontSize: 30,
+                    },
                     tooltips: {
                         bodyFontSize: 20,
                         titleFontSize: 18,
                         displayColors: false,
+                        titleFontColor: '#22cd59',
                     },
                     legend: {
                         display: false,
