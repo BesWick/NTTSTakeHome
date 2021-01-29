@@ -9,7 +9,6 @@ function getMetrics(req, res) {
             res.status(500).send(err)
             return
         }
-        console.log(patents)
         const [categoryMap, centerMap] = metric.calcMetrics(patents)
         res.send({
             category: categoryMap,

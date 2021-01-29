@@ -2,8 +2,6 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var config = require('./config')
 const app = express()
-
-//configure API to use bodyparser and look for JSON data in the request body
 app.use(require('cors')())
 
 app.use('/api', require('./metrics/router'))
