@@ -1,7 +1,7 @@
 .barchart {
     font-family: Retro;
     color: #0cf155;
-    font-size: 20;
     overflow: scroll;
     width: 80%;
+    max-width: 1800px;
 }

@@ -3,21 +3,22 @@ import 'chartjs-plugin-labels'
 import './pie.css'
 
 function PieChart({ data }) {
-    // console.log(data)
-    const dataLen = Object.values(data).reduce((a, b) => a + b, 0)
-    const chartData = {
-        labels: Object.keys(data),
-        datasets: [
-            {
-                borderColor: '#22cd59',
-                backgroundColor: 'black',
-                borderWidth: 1,
-                hoverBackgroundColor: '#137633',
-                hoverBorderColor: '22cd59',
-                data: Object.values(data),
-            },
-        ],
-    }
+    const dataLen = data ? Object.values(data).reduce((a, b) => a + b, 0) : 0
+    const chartData = data
+        ? {
+              labels: Object.keys(data),
+              datasets: [
+                  {
+                      borderColor: '#22cd59',
+                      backgroundColor: 'black',
+                      borderWidth: 1,
+                      hoverBackgroundColor: '#137633',
+                      hoverBorderColor: '22cd59',
+                      data: Object.values(data),
+                  },
+              ],
+          }
+        : []
 
     return (
         <div className='piechart'>

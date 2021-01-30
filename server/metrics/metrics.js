@@ -1,10 +1,8 @@
 /**
- * //calculate 2 metrics: 
-// i.	Number of patents per portfolio category
-// ii.	Number of patents per NASA field center
- * 
- * @param {*} arr 
- * @param {*} callback 
+ * calculate 2 metrics:
+ * i.	Number of patents per portfolio category
+ * ii.	Number of patents per NASA field center
+ *
  */
 function calcMetrics(arr) {
     const categoryMap = {}

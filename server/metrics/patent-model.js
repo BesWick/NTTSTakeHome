@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-//patent array structure
+//patent object structure
 // 0:'id'
 // 1:'reference number'
 // 2:'title'
@@ -14,8 +14,10 @@ const axios = require('axios')
 // 10:'Image Url'
 // 11:'Subcategotu'
 
-//convert input arr, an array containing arrays of strings to be
-// an array of JSON objects, each representing a patent
+/**
+ * convert input arr, an array containing arrays of strings to instead be
+ * an array of JSON objects, each representing a Patent
+ */
 function convertToJSON(arr) {
     const result = []
     if (arr.length == 0 || arr === null) {

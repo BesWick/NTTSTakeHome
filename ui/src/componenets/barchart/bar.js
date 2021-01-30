@@ -2,21 +2,22 @@ import { HorizontalBar } from 'react-chartjs-2'
 
 import './bar.css'
 function BarChart({ data }) {
-    // console.log(data)
-    const chartData = {
-        labels: Object.keys(data),
-        datasets: [
-            {
-                label: '# of Patents',
-                borderColor: '#22cd59',
-                backgroundColor: '#137633',
-                borderWidth: 1,
-                hoverBackgroundColor: '#22cd59',
-                hoverBorderColor: '#22cd59',
-                data: Object.values(data),
-            },
-        ],
-    }
+    const chartData = data
+        ? {
+              labels: Object.keys(data),
+              datasets: [
+                  {
+                      label: '# of Patents',
+                      borderColor: '#22cd59',
+                      backgroundColor: '#137633',
+                      borderWidth: 1,
+                      hoverBackgroundColor: '#22cd59',
+                      hoverBorderColor: '#22cd59',
+                      data: Object.values(data),
+                  },
+              ],
+          }
+        : []
     return (
         <div className='barchart'>
             <HorizontalBar

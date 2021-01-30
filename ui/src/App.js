@@ -19,8 +19,9 @@ function App() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get('/api/metrics')
-                // console.log(response.data, response.data.category)
+                const response = await axios.get(
+                    'http://localhost:3003/api/metrics',
+                )
                 setCategory(response.data.category)
                 setCenter(response.data.center)
             } catch (err) {
